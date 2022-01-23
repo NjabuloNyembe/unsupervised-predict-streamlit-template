@@ -45,7 +45,7 @@ def main():
 
     # DO NOT REMOVE the 'Recommender System' option below, however,
     # you are welcome to add more options to enrich your app.
-    page_options = ["Recommender System","Solution Overview"]
+    page_options = [" Movie Recommender","Solution Overview"]
 
     # -------------------------------------------------------------------
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
@@ -102,7 +102,87 @@ def main():
     # ------------- SAFE FOR ALTERING/EXTENSION -------------------
     if page_selection == "Solution Overview":
         st.title("Solution Overview")
-        st.write("Describe your winning approach on this page")
+        st.info('Introduction')
+        st.write(
+            'We live in a wonderful world where endless entertainments are available at the comfort of your home.\
+            In recent years the entertainment streaming services became extremely competitive as numerous large\
+            entertainment industries have deployed their own streaming platforms. It is not only the amount and\
+            quality, but also the recommendation of contents that keeps the users subscribed to a platform.\
+            During the last few decades, with the rise of YouTube, Amazon, Netflix and\
+            many other such web services, recommender systems have taken more and more place in our lives.\
+            Recommendation systems are socially and economically important system for the platforms,\
+            as it offers the users appropriate contents based on their viewing history,\
+            thus keeping them engaged to the service.\
+            From e-commerce (suggest to buyers articles that could interest them)\
+            to on-line advertisement (suggest to users the right contents, matching their preferences),\
+            recommender systems are today unavoidable in our daily on-line journeys.'
+            )
+
+        st.info('What are recommender systems?')
+        st.write(
+            'In a very general way, recommender systems are algorithms aimed at suggesting\
+            relevant items to users (items being movies to watch,\
+            text to read, products to buy or anything else depending on industries).\
+            With this context,\
+            '
+        )
+        
+        st.info('Our Objective')
+        st.write(
+           'we are aiming to build a recommendation algorithm based on content to collaborative filtering\
+            that is capable of accurately predicting how a user will rate a movie they have not yet accessed\
+            based on their historical preferences. Recommender systems are really critical in some industries\
+            as they can generate a huge amount of income when they are efficient or also be a way to stand out\
+            significantly from competitors.\
+            Our algorithm may provide an accurate and robust solution to this economically significant challenge\
+            for the entertainment streaming industries by encouraging user-platform affinity, thus ultimately\
+            generating revenue.'
+        )
+
+   
+        options=['Exploratory Data Analysis',"Recomender Models",'Resources','Raw Data']
+        navigator=st.selectbox('Select and navigate to the relevant page for discriptions',options)
+
+        if navigator=='Exploratory Data Analysis':
+            st.title('Exploratory Data Analysis')
+            st.markdown(
+                'Exploratory Data Analysis refers to the critical process of performing\
+                initial investigations on data so as to discover patterns,\
+                to spot anomalies,to test hypotheses and to check assumptions with the help\
+                of summary statistics and graphical representations. \
+               '
+            )
+            st.info('Movie Production Trend')
+            st.image('recommenders\Resources\imgs\productiontrend.png')
+            st.markdown(
+                'mark down to be added'
+                )
+
+            st.info('Prominent Genres & Movie Types')
+            st.image('recommenders\Resources\imgs\moviegenres.png')
+            st.markdown('mark down to be added')
+
+            st.info('Rating Tendecies Across All Genres')
+            st.image('recommenders\Resources\imgs\histratings.png')
+            st.markdown('mark down to be added')
+
+            st.info('Popular Actors')
+            st.image('recommenders\Resources\imgs\actors.png')
+            st.markdown('')
+
+            st.info('Popular Movie Directors')
+            st.image('recommenders\Resources\imgs\directors.png')
+            st.markdown('mark down to be added')
+        
+        if navigator=='Raw Data':
+            st.title('Raw data & Origins')
+            st.write(
+                'mark down to be added'
+            )
+
+
+
+
 
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
