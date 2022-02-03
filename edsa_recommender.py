@@ -51,7 +51,7 @@ def main():
     # ----------- !! THIS CODE MUST NOT BE ALTERED !! -------------------
     # -------------------------------------------------------------------
     page_selection = st.sidebar.selectbox("Choose Option", page_options)
-    if page_selection == "Recommender System":
+    if page_selection == " Movie Recommender":
         # Header contents
         st.write('# Movie Recommender Engine')
         st.write('### EXPLORE Data Science Academy Unsupervised Predict')
@@ -155,24 +155,53 @@ def main():
             st.info('Movie Production Trend')
             st.image('EDA_files\Productionyears.png')
             st.markdown(
-                'mark down to be added'
+                'The year 1995 has the highest number of movies released in the dataset'
                 )
 
             st.info('Prominent Genres & Movie Types')
-            st.image('EDA_files\Popularratings.png')
-            st.markdown('mark down to be added')
+            st.image('EDA_files\Prominentgenres.png')
+            st.image('EDA_files\Popgen.png')
+            st.markdown(
+                'Drama is the most popular genre in the dataset\
+                 it would be expected to have a bigger weight on the outcome of\
+                 the prediction we can be confident of pridictions that lie within the drama\
+                 genre and others subsequent ones'
+                )
 
             st.info('Rating Tendecies Across All Genres')
             st.image('EDA_files\Popularratings.png')
-            st.markdown('mark down to be added')
+            st.image('EDA_files\Poprat.png')
+            st.markdown(
+                'We can see that the majority of movies ratings are between 3.0 to 5.\
+                 with most ratings falling in 3.0,4.0,5.0\
+                 there apears to be major rating categories\
+                 the model we fit takes into account the weights of these ratings in\
+                 recommandations highly rated movies will generally\
+                 be most likley to be recommended  '
+                )
+            
+            
 
-            # st.info('Popular Actors')
-            # st.image('recommenders\Resources\imgs\actors.png')
-            # st.markdown('')
+            st.info('Popular Actors')
+            st.image('recommenders\Resources\imgs\actors.png')
+            st.markdown(
+                'Samuel L. Jackson is the most featured actor in the database followed by Steve Buscemi\
+                 as such we expect an affiliation with these top actors in the overall recommentation choices.\
+                ')
 
-            # st.info('Popular Movie Directors')
-            # st.image('recommenders\Resources\imgs\directors.png')
-            # st.markdown('mark down to be added')
+            st.info('Popular Movie Directors')
+            st.image('EDA_files\Popdir.png')
+            st.markdown(
+                '- The phrase "See full Summary" appears the most under featured Director\
+                 - Both Woody Allen and Luc Besson are featured 26 times in the dataset\
+                 such we expect an affiliation with these top actors in the overall recommentation choices.'
+                )
+
+            st.info('Popular Movie Plots')
+            st.image('recommenders\Resources\imgs\directors.png')
+            st.markdown( 
+                '**rated F** and **female nudity** are the most popular movie plots in the dataset'                                                                                                                      
+                )
         
         if navigator=='Raw Data':
             st.title('Raw data & Origins')
@@ -197,22 +226,6 @@ def main():
             st.dataframe(pd.read_csv('resources\data\movies.csv'))
             st.info('Ratings dataset')
             st.dataframe(pd.read_csv('resources\data\Latings.csv'))
-            
-
-            
-        if navigator=="Recomender Models":
-            st.title('Model Fitting')
-            st.write(
-                'mark down to be added'
-            )
-        if navigator=='Resources':
-            st.title('Extra resources')
-            st.write(
-                'mark down to be added'
-            )
-            st.info('')
-        
-
     # You may want to add more sections here for aspects such as an EDA,
     # or to provide your business pitch.
 
